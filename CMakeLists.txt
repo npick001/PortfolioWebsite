@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 4.0)
-set(CMAKE_TOOLCHAIN_FILE "Z:/Repos/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+if (DEFINED $ENV{VCPKG_ROOT})
+    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+else()
+    message(ERROR "VCPKG_ROOT not defined. Build will not succeed.")
+endif()
 project(PortfolioWebsite CXX)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
