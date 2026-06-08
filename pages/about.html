@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | [Your Name]</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>About | Nicholas Pickering</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <div id="navbar-placeholder"></div>
@@ -15,23 +15,41 @@
             <p class="subtitle">Solving complex problems with elegant C++ solutions.</p>
         </section>
 
-        <section class="content-grid">
+        <section class="about-grid">
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            
             <div class="bio-text">
                 <h3>The Journey</h3>
-                <p>I am a software engineer with a passion for high-performance systems and backend architecture[cite: 4, 8]. My expertise lies in building scalable web services using the Drogon framework, where I focus on low-level control and execution speed[cite: 3, 5].</p>
-                <p>Outside of coding, I enjoy diving into systems design and exploring the latest advancements in the C++ ecosystem.</p>
+                <p>I am a software engineer with a passion for building scalable high-performance systems. My background is in <strong>Simulation Engineering</strong>, a specialization of Computer Science focused on architecting scalable computer simulations to drive actionable insights from replicable predictions.</p>
+                <p>I take end-to-end ownership of mission-critical architecture, designing, optimizing, and maintaining robust software solutions from the ground up.</p>
+                <p>My current work spans utilizing object-oriented languages, primarily C and C++, to model complex system behaviors and synchronize high-performance distributed simulations across $30M+ enterprise projects.</p>
             </div>
-            <div class="values">
-                <h3>My Philosophy</h3>
-                <ul>
-                    <li><strong>Performance First:</strong> Code should be as efficient as it is readable.</li>
-                    <li><strong>Scalability:</strong> Building for today with tomorrow's growth in mind.</li>
-                    <li><strong>Continuous Learning:</strong> Staying at the forefront of backend technology.</li>
-                </ul>
+        </section>
+
+        <section class="philosophy-section">
+            <h3 class="section-title">My Engineering Philosophy</h3>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h4>🚀 Performance First</h4>
+                    <p>Code should be as efficient as it is readable. I place a heavy emphasis on optimization and generating self-documenting code.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4>📈 Scalability</h4>
+                    <p>Building for today with tomorrow's growth in mind. Systems must be architected to handle increasing load gracefully.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4>🛡️ Fault Tolerance</h4>
+                    <p>Designing systems with failure recovery from the start. Robustness is not an afterthought; it is a baseline requirement.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="/common.js"></script>
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/carousel.js"></script>
 </body>
 </html>

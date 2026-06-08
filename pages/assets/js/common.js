@@ -27,7 +27,7 @@ function setupNavbar() {
                     <a href="/about">About</a>
                     <a href="/skills">Skills</a>
                     <a href="/projects">Projects</a>
-                    <a href="/articles">Articles</a>
+                    <a href="/resume">Resume</a>
                     <a href="/contact" class="nav-cta">Contact</a>
                 </nav>
             </div>
@@ -52,7 +52,7 @@ function setupFooter() {
     const currentYear = new Date().getFullYear();
     footerPlaceholder.innerHTML = `
         <footer>
-            <p>&copy; ${currentYear} [Your Name]. Built with C++ & Drogon.</p>
+            <p>&copy; ${currentYear} Nicholas Pickering. Built with C++ & Drogon.</p>
         </footer>
     `;
 }
