@@ -4,7 +4,6 @@
 FROM drogonframework/drogon:latest AS builder
 WORKDIR /src
 COPY . .
-#RUN mkdir build && cd build && cmake .. && make
 RUN cd build && cmake .. && make
 
 # ==========================================

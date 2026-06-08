@@ -13,16 +13,20 @@
         <section class="page-header">
             <h1>My Projects</h1>
             <p class="subtitle">A selection of my recent technical work.</p>
+            <p class="subsubtitle">Hint: Check out the software architectures!</p>
         </section>
 
         <div class="project-grid">
             <div class="project-card">
                 <h3>Portfolio Website</h3>
-                <p>The source code for my high-performance portfolio website, built using C++ and the Drogon framwork.</p>
+                <p>The source code for my high-performance portfolio website, built using C++ and the Drogon framework.</p>
                 <div class="tech-stack">
                     <span>C++</span> <span>Drogon</span>
                 </div>
-                <a href="https://github.com/npick001/PortfolioWebsite" target="_blank" rel="noopener noreferrer" class="portfolio-website-source">View Source &rarr;</a>
+                <div class="project-links">
+                    <a href="https://github.com/npick001/PortfolioWebsite" target="_blank" rel="noopener noreferrer" class="btn-text">View Source &rarr;</a>
+                    <button class="btn-text arch-toggle" data-project="portfolio">Software Architecture &darr;</button>
+                </div>
             </div>
 
             <div class="project-card">
@@ -31,7 +35,10 @@
                 <div class="tech-stack">
                     <span>Python</span> <span>PyTorch</span> <span>SLURM</span>
                 </div>
-                <a href="https://github.com/npick001/PortfolioWebsite" target="_blank" rel="noopener noreferrer" class="cnn-training">View Source &rarr;</a>
+                <div class="project-links">
+                    <a href="https://github.com/npick001/PortfolioWebsite" target="_blank" rel="noopener noreferrer" class="btn-text">View Source &rarr;</a>
+                    <button class="btn-text arch-toggle" data-project="cnn">Software Architecture &darr;</button>
+                </div>
             </div>
 
             <div class="project-card">
@@ -40,12 +47,30 @@
                 <div class="tech-stack">
                     <span>Lua</span> <span>ComputerCraft</span>
                 </div>
-                <a href="https://github.com/npick001/ReactorControl" target="_blank" rel="noopener noreferrer" class="reactor-control">View Source &rarr;</a>
+                <div class="project-links">
+                    <a href="https://github.com/npick001/ReactorControl" target="_blank" rel="noopener noreferrer" class="btn-text">View Source &rarr;</a>
+                    <button class="btn-text arch-toggle" data-project="reactor">Software Architecture &darr;</button>
+                </div>
             </div>
         </div>
+
+        <div id="image-modal" class="modal hidden">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modal-image">
+        </div>
+
+        <section id="architecture-display" class="arch-display-container hidden">
+            <div class="arch-header">
+                <h2 id="arch-title">Project Architecture</h2>
+                <button id="close-arch" class="btn-close">&times;</button>
+            </div>
+            <div id="arch-content" class="arch-content">
+                </div>
+        </section>
     </main>
     
     <div id="footer-placeholder"></div>
     <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/software_architecture.js"></script>
 </body>
 </html>

@@ -269,6 +269,11 @@ footer {
     font-size: 1.2rem;
 }
 
+.subsubtitle {
+    color: var(--text-secondary);
+    font-size: 1.0rem;
+}
+
 /* --- Projects Grid --- */
 .project-grid {
     display: grid;
@@ -492,13 +497,6 @@ footer {
     animation: fade 0.5s ease-in-out;
 }
 
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
 /* Navigation Buttons - Positioned on the sides */
 .carousel-btn {
     position: absolute;
@@ -526,4 +524,172 @@ footer {
 @keyframes fade {
     from { opacity: 0.4; }
     to { opacity: 1; }
+}
+
+/* --- Project Links Alignment --- */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--accent-color, #38bdf8);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.btn-text:hover {
+    color: #e2e8f0;
+    text-decoration: underline;
+}
+
+/* --- Dynamic Architecture Display --- */
+.arch-display-container {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--surface-color, #1e293b);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color, #38bdf8);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.arch-display-container.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.arch-display-container.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.arch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-close:hover {
+    color: #ef4444; /* Red on hover */
+}
+
+.arch-content p {
+    margin-bottom: 1rem;
+}
+
+.arch-content ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    color: var(--text-secondary, #94a3b8);
+}
+
+.arch-content li {
+    margin-bottom: 0.5rem;
+}
+
+a:visited {
+    color: var(--accent-hover);
+}
+
+/* Ensure primary buttons keep their dark text when clicked/visited */
+.btn-primary:visited,
+.btn-primary:active {
+    color: var(--bg-color);
+}
+
+/* Ensure outline buttons keep their white text when clicked/visited */
+.btn-outline:visited,
+.btn-outline:active {
+    color: var(--text-primary);
+}
+
+/* --- Architecture Diagram Image --- */
+.arch-diagram {
+    width: 100%;
+    max-width: 800px; /* Prevents the image from getting too massive on wide screens */
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem auto; /* Centers the image and adds space below it */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Nice drop shadow to make it pop */
+    border: 1px solid #334155; /* Subtle border matching your dark theme */
+    cursor: zoom-in; /* Changes mouse to a magnifying glass */
+    transition: transform 0.2s ease;
+}
+
+.arch-diagram:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* --- Image Lightbox Modal --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000; /* Sit on top of the navbar! */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95); /* Deep dark blue, mostly opaque */
+    backdrop-filter: blur(5px);
+}
+
+.modal.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh; /* Won't overflow the vertical screen space */
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+    animation: zoom 0.3s ease; /* Smooth pop-in animation */
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #94a3b8;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+@keyframes zoom {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
